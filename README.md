@@ -11,11 +11,15 @@ To run the application in local machine, run the following commands in the my-ap
 
 To run the application inside Docker container, run the following commands in the my-app directory:
 
-**docker build -t containername .**  
-**docker run --rm -it --name web -p 3000:3000 containername**
+>**docker build -t containername .**  
+>**docker run --rm -it --name web -p 3000:3000 containername**
 
 Once the application is triggered, the UI for login will be shown with the fields of username and password
-To use our app, write a username to be **admin** and password to be **1234** to login in.
+To use our app insert the following credentials to login, 
+
+>**username = admin**  
+>**password = 1234**  
+
 Once logged in, assuming the user is Doctor, Doctor will be shown list of patients that they will need to be attend.
 
 If username and password does not match then the application will allow the user to insert the credentials again.
