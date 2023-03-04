@@ -20,6 +20,6 @@ To use our app insert the following credentials to login and then click the **su
 >**username = admin**  
 >**password = 1234**  
 
-Once logged in, assuming the user is Doctor, Doctor will be shown list of patients that they will need to be attend.
+Once logged in, assuming the user is a Doctor, the Doctor will be shown list of patients that he/she will need to be attend based on appointment timings.
 
 If username and password does not match then the application will allow the user to insert the credentials again.
