@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import { useState } from "react";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import ScheduleView from './ScheduleView';
 
 export default function BoxSx() {
   const [name, setName] = useState("");
@@ -22,7 +23,9 @@ export default function BoxSx() {
       setLoggedIn(true);
       alert("Your are logged in!");
     } else {
-      alert("wrong credentials!\n Try again please")
+      setName("");
+      setPassword("");
+      alert("Wrong credentials!\n Try again please");
     }
   }
 
@@ -54,7 +57,7 @@ export default function BoxSx() {
       <Button onClick={check_credentials} variant="contained" color="success">
         Submit
       </Button>
-    </Stack> : <>Welcome Home!</>}
+    </Stack> : <ScheduleView/>}
 
     </Box>
   );
