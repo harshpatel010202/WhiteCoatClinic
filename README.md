@@ -9,6 +9,9 @@ To run the application in local machine, run the following commands in the my-ap
 >**npm install**  
 >**npm run start**
 
+It will trigger the application at the following website:
+>**http://localhost:3000/**
+
 To run the application inside Docker container, run the following commands in the my-app directory:
 
 >**docker build -t containername .**  
