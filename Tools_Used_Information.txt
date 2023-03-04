@@ -1,7 +1,7 @@
 Why use Docker?
 --> Docker allows developers to create isolated containers to deploy applications faster.
     Furthermore, Docker helps in replicating a production like environment to ensure that
-    the program does not give trouble during releasing to production.
+    the program does not give trouble during release to production.
 
 Why use checker for semantic commit using CI/CD?
 --> The checker for semantic commit using CI/CD allows us to ensure following:
