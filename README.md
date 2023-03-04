@@ -14,6 +14,9 @@ To run the application inside Docker container, run the following commands in th
 >**docker build -t containername .**  
 >**docker run --rm -it --name web -p 3000:3000 containername**
 
+To check whether the application inside the Docker container has ran successfully, go to the following website:
+>**http://localhost:3000/**
+
 Once the application is triggered, the UI for login will be shown with the fields of username and password
 To use our app insert the following credentials to login and then click the **submit** button, 
 
