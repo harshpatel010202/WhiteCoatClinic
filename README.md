@@ -15,7 +15,7 @@ To run the application inside Docker container, run the following commands in th
 >**docker run --rm -it --name web -p 3000:3000 containername**
 
 Once the application is triggered, the UI for login will be shown with the fields of username and password
-To use our app insert the following credentials to login, 
+To use our app insert the following credentials to login and then click the **submit** button, 
 
 >**username = admin**  
 >**password = 1234**  
