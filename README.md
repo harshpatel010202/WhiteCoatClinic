@@ -11,7 +11,7 @@ To run the application in local machine, run the following commands in the my-ap
 
 To run the application inside Docker container, run the following commands in the my-app directory:
 
-**docker build -t containername .**
+**docker build -t containername .**  
 **docker run --rm -it --name web -p 3000:3000 containername**
 
 Once the application is triggered, the UI for login will be shown with the fields of username and password
