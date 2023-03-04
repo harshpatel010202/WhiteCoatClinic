@@ -1,10 +1,15 @@
 import * as React from 'react';
+import BoxSx from './BoxSx';
+import './Home.css';
 
 function Home() {
-  return (
-    <p> Hello </p>
     
-  );
+    return (
+        <div className='box'>
+            <BoxSx/>
+        </div>
+
+    );
 }
 
 export default Home;
