@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useState } from "react";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 export default function BoxSx() {
   const [name, setName] = useState("");
@@ -32,9 +34,9 @@ export default function BoxSx() {
         width: "50%",
         border: 0,
         padding: 10,
-        backgroundColor: 'primary.dark',
+        backgroundColor: 'lightblue',
       }}
-    >{!loggedIn ? <>
+    >{!loggedIn ? <Stack direction="column" spacing={2}>
       <label>Enter your user name:
         <input
           type="text"
@@ -49,10 +51,10 @@ export default function BoxSx() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
-      <button onClick={check_credentials}>
+      <Button onClick={check_credentials} variant="contained" color="success">
         Submit
-      </button>
-    </> : <>Welcome Home!</>}
+      </Button>
+    </Stack> : <>Welcome Home!</>}
 
     </Box>
   );
