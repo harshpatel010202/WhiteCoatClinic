@@ -7,7 +7,7 @@ The project that White Coat Clinic is working on will upgrade the current medica
 To run the application in local machine, run the following commands in the my-app directory:
 
 >**npm install**  
->**npm run start**
+>**npm start**
 
 It will trigger the application at the following website:
 >**http://localhost:3000/**
