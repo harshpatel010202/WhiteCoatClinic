@@ -1,9 +1,12 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import Box from "@mui/material/Box";
 import { useState } from "react";
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-import ScheduleView from './ScheduleView';
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import ScheduleView from "./ScheduleView";
+import MainPage from "./MainPage";
+import Nav from "./Nav";
+import "./Home.css";
 
 export default function BoxSx() {
   const [name, setName] = useState("");
@@ -13,7 +16,7 @@ export default function BoxSx() {
   const accepted_credentials = [["admin", "1234"]];
 
   function checkCredentials(credentials) {
-    return (credentials[0] === name) && (credentials[1] === password);
+    return credentials[0] === name && credentials[1] === password;
   }
 
   const check_credentials = () => {
@@ -27,38 +30,53 @@ export default function BoxSx() {
       setPassword("");
       alert("Wrong credentials!\n Try again please");
     }
-  }
+  };
 
   return (
-    <Box
-      sx={{
-        height: 500,
-        margin: "auto",
-        width: "50%",
-        border: 0,
-        padding: 10,
-        backgroundColor: 'lightblue',
-      }}
-    >{!loggedIn ? <Stack direction="column" spacing={2}>
-      <label>Enter your user name:
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
-      <label>Enter your Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <Button onClick={check_credentials} variant="contained" color="success">
-        Submit
-      </Button>
-    </Stack> : <ScheduleView/>}
-
-    </Box>
+    <div className="box">
+      <>
+        <Nav />
+        <Box
+          sx={{
+            height: 500,
+            margin: "auto",
+            width: "50%",
+            border: 0,
+            padding: 10,
+            backgroundColor: "lightblue",
+          }}
+        >
+          {!loggedIn ? (
+            <Stack direction="column" spacing={2}>
+              <label>
+                Enter your user name:
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
+              <label>
+                Enter your Password:
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </label>
+              <Button
+                onClick={check_credentials}
+                variant="contained"
+                color="success"
+              >
+                Submit
+              </Button>
+            </Stack>
+          ) : (
+            <MainPage />
+          )}
+        </Box>
+      </>
+    </div>
   );
 }
