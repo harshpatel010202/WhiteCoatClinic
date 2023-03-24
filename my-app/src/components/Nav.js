@@ -11,8 +11,10 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-function Nav() {
+
+function Nav(props) {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -22,6 +24,10 @@ function Nav() {
   const handleDrawerClose = () => {
     setIsDrawerOpen(false);
   };
+
+
+  const navigate = useNavigate();
+  
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -40,10 +46,11 @@ function Nav() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             White Coats Clinic
           </Typography>
+          {!props.locked? <Button onClick={()=>{alert("Your are logged out!"); navigate('/');}} color="inherit">Log Out</Button >:<></> }
         </Toolbar>
       </AppBar>
-      <Drawer anchor="left" open={isDrawerOpen} onClose={handleDrawerClose}>
-        <List>
+      {!props.locked? <List>
+      <Drawer anchor="left" open={isDrawerOpen} onClose={(handleDrawerClose)}>
           <ListItem
             button
             component={Link}
@@ -80,8 +87,8 @@ function Nav() {
           <ListItem button onClick={handleDrawerClose}>
             <ListItemText primary="Medical History" />
           </ListItem>
-        </List>
-      </Drawer>
+          </Drawer>
+        </List> : <></>}
     </Box>
   );
 }

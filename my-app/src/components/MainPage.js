@@ -20,7 +20,7 @@ export default function MainPage() {
 
   return (
     <>
-      <Nav />
+      <Nav locked={false}/>
       <Box
         sx={{
           height: 500,

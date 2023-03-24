@@ -54,7 +54,7 @@ const PatientProfile = () => {
 
   return (
     <>
-      <Nav />
+      <Nav locked={false} />
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }}>
           <TableHead sx={{ backgroundColor: "#f5f5f5" }}>
