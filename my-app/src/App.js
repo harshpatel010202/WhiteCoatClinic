@@ -6,6 +6,7 @@ import ScheduleView from "./components/ScheduleView";
 import PatientProfile from "./components/PatientProfile";
 import BoxSx from "./components/BoxSx";
 import MainPage from "./components/MainPage";
+import MedicalHistory from "./components/MedicalHistory";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/schedule" element={<ScheduleView />} />
           <Route path="/PatientProfile" element={<PatientProfile />} />
           <Route path="/MainPage" element={<MainPage />} />
+          <Route path="/MedicalHistory" element={<MedicalHistory />} />
         </Routes>
       </BrowserRouter>
     </div>

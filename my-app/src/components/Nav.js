@@ -11,8 +11,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 
 function Nav(props) {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -25,9 +24,7 @@ function Nav(props) {
     setIsDrawerOpen(false);
   };
 
-
   const navigate = useNavigate();
-  
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -46,49 +43,73 @@ function Nav(props) {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             White Coats Clinic
           </Typography>
-          {!props.locked? <Button onClick={()=>{alert("Your are logged out!"); navigate('/');}} color="inherit">Log Out</Button >:<></> }
+          {!props.locked ? (
+            <Button
+              onClick={() => {
+                alert("Your are logged out!");
+                navigate("/");
+              }}
+              color="inherit"
+            >
+              Log Out
+            </Button>
+          ) : (
+            <></>
+          )}
         </Toolbar>
       </AppBar>
-      {!props.locked? <List>
-      <Drawer anchor="left" open={isDrawerOpen} onClose={(handleDrawerClose)}>
-          <ListItem
-            button
-            component={Link}
-            to="/MainPage"
-            onClick={handleDrawerClose}
-          >
-            <ListItemText
-              primary="Main Page"
-              style={{ textDecorationLine: "none" }}
-            />
-          </ListItem>
-          <ListItem
-            button
-            component={Link}
-            to="/PatientProfile"
-            onClick={handleDrawerClose}
-          >
-            <ListItemText
-              primary="Patient Profile"
-              style={{ textDecorationLine: "none" }}
-            />
-          </ListItem>
-          <ListItem
-            button
-            component={Link}
-            to="/schedule"
-            onClick={handleDrawerClose}
-          >
-            <ListItemText
-              primary="Schedule"
-              style={{ textDecorationLine: "none" }}
-            />
-          </ListItem>
-          <ListItem button onClick={handleDrawerClose}>
-            <ListItemText primary="Medical History" />
-          </ListItem>
+      {!props.locked ? (
+        <List>
+          <Drawer anchor="left" open={isDrawerOpen} onClose={handleDrawerClose}>
+            <ListItem
+              button
+              component={Link}
+              to="/MainPage"
+              onClick={handleDrawerClose}
+            >
+              <ListItemText
+                primary="Main Page"
+                style={{ textDecorationLine: "none" }}
+              />
+            </ListItem>
+            <ListItem
+              button
+              component={Link}
+              to="/PatientProfile"
+              onClick={handleDrawerClose}
+            >
+              <ListItemText
+                primary="Patient Profile"
+                style={{ textDecorationLine: "none" }}
+              />
+            </ListItem>
+            <ListItem
+              button
+              component={Link}
+              to="/schedule"
+              onClick={handleDrawerClose}
+            >
+              <ListItemText
+                primary="Schedule"
+                style={{ textDecorationLine: "none" }}
+              />
+            </ListItem>
+            <ListItem
+              button
+              component={Link}
+              to={"/MedicalHistory"}
+              onClick={handleDrawerClose}
+            >
+              <ListItemText
+                primary="Medical History"
+                style={{ textDecorationLine: "none" }}
+              />
+            </ListItem>
           </Drawer>
-        </List> : <></>}
+        </List>
+      ) : (
+        <></>
+      )}
     </Box>
   );
 }
