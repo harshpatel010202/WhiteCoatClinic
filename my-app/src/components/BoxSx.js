@@ -33,50 +33,52 @@ export default function BoxSx() {
   };
 
   return (
-    <div className="box">
-      <>
-        <Nav />
-        <Box
-          sx={{
-            height: 500,
-            margin: "auto",
-            width: "50%",
-            border: 0,
-            padding: 10,
-            backgroundColor: "lightblue",
-          }}
-        >
-          {!loggedIn ? (
-            <Stack direction="column" spacing={2}>
-              <label>
-                Enter your user name:
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </label>
-              <label>
-                Enter your Password:
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </label>
-              <Button
-                onClick={check_credentials}
-                variant="contained"
-                color="success"
-              >
-                Submit
-              </Button>
-            </Stack>
-          ) : (
-            <MainPage />
-          )}
-        </Box>
-      </>
-    </div>
+    <>
+      {!loggedIn ? (
+        <div className="box">
+          <>
+            <Nav locked={true}/>
+            <Box
+              sx={{
+                height: 500,
+                margin: "auto",
+                width: "50%",
+                border: 0,
+                padding: 10,
+                backgroundColor: "lightblue",
+              }}
+            >
+              <Stack direction="column" spacing={2}>
+                <label>
+                  Enter your user name:
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </label>
+                <label>
+                  Enter your Password:
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </label>
+                <Button
+                  onClick={check_credentials}
+                  variant="contained"
+                  color="success"
+                >
+                  Submit
+                </Button>
+              </Stack>
+            </Box>
+          </>
+        </div>
+      ) : (
+        <MainPage />
+      )}
+    </>
   );
 }

@@ -117,7 +117,7 @@ const rows = [
 export default function ScheduleView() {
   return (
     <>
-      <Nav />
+      <Nav locked={false}/>
       <h1>Your schedule for today</h1>
       <Box sx={{ height: 400, width: "100%" }}>
         <DataGrid
