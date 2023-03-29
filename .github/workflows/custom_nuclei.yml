@@ -11,4 +11,4 @@ jobs:
       with:
         target: ‘http://testphp.vulnweb.com/’
         github-report: true
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+
