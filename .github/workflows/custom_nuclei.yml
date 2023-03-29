@@ -9,6 +9,6 @@ jobs:
     - name: Run Nuclei
       uses: projectdiscovery/nuclei-action@main
       with:
-        target: ‘http://testphp.vulnweb.com/’
+        target: "http://localhost:3000/"
         github-report: true
 
