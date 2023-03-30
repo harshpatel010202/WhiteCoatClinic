@@ -1,0 +1,13 @@
+Why use Docker?
+--> Docker allows developers to create isolated containers to deploy applications faster.
+    Furthermore, Docker helps in replicating a production like environment to ensure that
+    the program does not give trouble during release to production.
+
+
+Why use Jira integrated with our GitHub repository?
+--> Jira allows developers to connect their GitHub Repository with Jira so developers can do following:
+    1. In Jira, developers can create a task ticket for them to work on to make the process of development visible throughout the team.
+    2. Also, Jira can create an automated branch name for each ticket so developers can use such name.
+    3. Jira makes development easier since each developer can observe their team progress.
+
+    
