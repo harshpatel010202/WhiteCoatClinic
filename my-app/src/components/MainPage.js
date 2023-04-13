@@ -93,7 +93,7 @@ export default function MainPage() {
               Find out about patients previous appointments, lab tests,
               prescriptions, etc.
             </p>
-            <Link style={{ textDecorationLine: "none" }} to="/">
+            <Link style={{ textDecorationLine: "none" }} to="/MedicalHistory">
               <Button sx={buttonStyle} href="/medical-history">
                 View
               </Button>

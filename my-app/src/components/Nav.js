@@ -30,20 +30,37 @@ function Nav(props) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            onClick={handleDrawerOpen}
-          >
-            <MenuIcon />
-          </IconButton>
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             White Coats Clinic
           </Typography>
           {!props.locked ? (
+            <>
+            <Button
+            component={Link}
+            to="/PatientProfile"
+            color="inherit"
+            >
+            Patient Profile
+            </Button>
+
+            <Button
+            component={Link}
+            to="/Schedule"
+            color="inherit"
+            >
+            Schedule
+            </Button>
+
+            <Button
+            component={Link}
+            to="/MedicalHistory"
+            color="inherit"
+            >
+            Medical History
+            </Button>
+
+
             <Button
               onClick={() => {
                 alert("Your are logged out!");
@@ -53,6 +70,7 @@ function Nav(props) {
             >
               Log Out
             </Button>
+            </>
           ) : (
             <></>
           )}

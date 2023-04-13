@@ -83,11 +83,13 @@ const MedicalHistory = () => {
           <Box>
             <FormControlLabel control={<Checkbox />} label="Asthma" />
             <FormControlLabel control={<Checkbox />} label="Cardiac Disease" />
-          </Box>
-          <Box>
             <FormControlLabel control={<Checkbox />} label="Cancer" />
           </Box>
+          <Box>
+            
+          </Box>
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -97,12 +99,11 @@ const MedicalHistory = () => {
           }}
         >
           <Box>
-            <TextField label="Medications" multiline />
+            <TextField label="Medications" multiline rows={4}/>
           </Box>
-          <Box>
-            <TextField label="Allergies" multiline />
-          </Box>
+
         </Box>
+
         <Box
           sx={{
             display: "flex",
@@ -112,12 +113,38 @@ const MedicalHistory = () => {
           }}
         >
           <Box>
-            <TextField label="Alcohol Consumption" />
+            <TextField label="Allergies" multiline rows={4}/>
           </Box>
+
+        </Box>
+
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "2rem",
+          }}
+        >
           <Box>
-            <TextField label="Illegal Drug Usage" />
+            <TextField label="Alcohol Consumption" multiline rows={4}/>
           </Box>
         </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "2rem",
+          }}
+        >
+          <Box>
+            <TextField label="Illegal Drug Usage" multiline rows={4}/>
+          </Box>
+        </Box>
+
         <TableContainer>
           <Table>
             <TableHead>

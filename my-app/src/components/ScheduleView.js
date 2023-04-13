@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import Nav from "./Nav";
+import DynamicTable from "./DynamicTable";
 
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
@@ -119,22 +120,8 @@ export default function ScheduleView() {
     <>
       <Nav locked={false}/>
       <h1>Your schedule for today</h1>
-      <Box sx={{ height: 400, width: "100%" }}>
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 5,
-              },
-            },
-          }}
-          pageSizeOptions={[5]}
-          checkboxSelection
-          disableRowSelectionOnClick
-        />
-      </Box>
+      <DynamicTable />
+
     </>
   );
 }
